@@ -1,6 +1,7 @@
 ---
 title: "Using Snyk with Terraform Cloud Run Tasks"
 date: "2022-06-21"
+featured_image: ""
 categories: 
   - "devops"
   - "infrastructure-as-code"
