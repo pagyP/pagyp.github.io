@@ -1,6 +1,7 @@
 ---
 title: "Deploy to multiple Azure regions using Terraform Cloud"
 date: "2022-06-22"
+featured_image: ""
 categories: 
   - "cloud"
   - "github"
