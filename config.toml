@@ -2,3 +2,9 @@ baseURL = 'https://pagyp.github.io'
 languageCode = 'en-us'
 title = 'Paginton.cloud'
 theme = "ananke"
+
+
+
+[[params.ananke_socials]]
+name = "twitter"
+url = "https://twitter.com/pagintonPO"
