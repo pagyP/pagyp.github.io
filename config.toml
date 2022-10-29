@@ -1,10 +1,21 @@
 baseURL = 'https://pagyp.github.io'
 languageCode = 'en-us'
-title = ''
+title = 'https://blog.paginton.cloud'
 theme = "ananke"
+SectionPagesMenu = "main"
 
 
+[params]
+  author = "Paul Paginton"
+  show_reading_time = true
+  
+  
+  
 
 [[params.ananke_socials]]
 name = "twitter"
 url = "https://twitter.com/pagintonP"
+
+[[params.ananke_socials]]
+name = "rss"
+url = "https://blog.paginton.cloud/index.xml"
