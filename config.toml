@@ -19,3 +19,7 @@ url = "https://twitter.com/pagintonP"
 [[params.ananke_socials]]
 name = "rss"
 url = "https://blog.paginton.cloud/index.xml"
+
+[[params.ananke_socials]]
+name = "github"
+url = "https://github.com/pagyp"
