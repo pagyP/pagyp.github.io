@@ -8,13 +8,12 @@ SectionPagesMenu = "main"
 [params]
   author = "Paul Paginton"
   show_reading_time = true
+  mastodon = "https://infosec.exchange/@paul_paginton"
   
   
   
 
-[[params.ananke_socials]]
-name = "twitter"
-url = "https://twitter.com/pagintonP"
+
 
 [[params.ananke_socials]]
 name = "rss"
@@ -23,3 +22,4 @@ url = "https://blog.paginton.cloud/index.xml"
 [[params.ananke_socials]]
 name = "github"
 url = "https://github.com/pagyp"
+
