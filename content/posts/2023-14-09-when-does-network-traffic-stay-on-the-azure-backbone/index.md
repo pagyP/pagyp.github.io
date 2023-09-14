@@ -54,3 +54,8 @@ The above is sometimes interpreted as saying that using Private Link/Private End
 <sup>3</sup>. https://azure.microsoft.com/en-us/blog/how-microsoft-builds-its-fast-and-reliable-global-network/
 
 <sup>4</sup>. https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/default-outbound-access
+
+additional sources: 
+https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/connectivity-to-azure-paas-services
+
+https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/routing-preference-overview
