@@ -25,11 +25,27 @@ Indeed some of Microsoft's own documentation sometimes seems to suggest this as 
 # The Microsoft Network:
 The Microsoft network is ASN 8075<sup>1</sup> and as such Microsoft owned IP addresses are routed within AS8075
 
-Let's take our first example:
+Let's first take a look at what the Microsoft documentation has to say:
 
+## Microsoft Documentation:
+- "IP traffic stays entirely within our global network and never enters the public Internet" https://azure.microsoft.com/en-us/explore/global-infrastructure/global-network/#documentation
+- "Azure traffic between our datacenters stays on our network and does not flow over the Internet. This includes all traffic between Microsoft services anywhere in the world. For example, within Azure, traffic between virtual machines, storage, and SQL communication traverses only the Microsoft network, regardless of the source and destination region. Intra-region VNet-to-VNet traffic, as well as cross-region VNet-to-VNet traffic, stays on the Microsoft network." - https://azure.microsoft.com/en-us/blog/how-microsoft-builds-its-fast-and-reliable-global-network/
+  
+The above seem pretty comprehensive and clear.  However, there are other Microsoft documents that seem to suggest that traffic originating from within Azure may not stay on the Microsoft network.  For example:
+
+- "Traffic between your virtual network and the service travels the Microsoft backbone network. Exposing your service to the public internet is no longer necessary" - https://learn.microsoft.com/en-us/azure/private-link/private-link-overview 
+  
+The above is sometimes intrepreted as saying that using Private Link/Private Endpoints is a way to ensure your traffic stays off of the public internet, but that's not really what it's saying.  We'll come back to this later.
+
+#### Let's look at some examples
 ## Example 1:
+
+- Here we have a virtual machine in UK South and a storage account in East US.  Everything is in the same subscription and the same resource group.  The virtual machine is in a VNET with a private IP address of 10.10.10.10 and it does not have a public IP associated to it.  It is using the Azure default outbound access<sup>2</sup>
+- The storage account is using the default settings and is not using Private Link/Endpoint
 
 
 
 
 <sup>1</sup>. https://bgp.he.net/AS8075#_prefixes , https://learn.microsoft.com/en-us/azure/internet-peering/policy
+
+<sup>2</sup>. https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/default-outbound-access
