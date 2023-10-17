@@ -44,6 +44,22 @@ The above is sometimes interpreted as saying that using Private Link/Private End
 - Here we have a virtual machine in UK South and a storage account in East US.  Everything is in the same subscription and the same resource group.  The virtual machine is in a VNET with a private IP address of 10.10.10.10 and it does not have a public IP associated to it.  It is using the Azure default outbound access<sup>4</sup>
 - The storage account is using the default settings and is not using Private Link/Endpoint
 
+The VM does not have a public IP atatched to it and uses the default internet access for virtual machines:
+![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-azure-backbone/images/vmip.png?w=1024)
+
+The storage account is called labwsxspfde and the blob endpoint is https://labwsxspfde.blob.core.windows.net/
+And if we do an nslookup on the storage account endpoint we get the following:
+![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-azure-backbone/images/storageaccountip.png?w=1024)
+
+So we can see that the storage account is using a public IP address of 52.239.169.132 and our VM is using default VM internet access and has a public IP address of 20.254.44.28
+
+If we now use ipinfo.io to see what ANS that IP address belongs to we get the following:
+![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-azure-backbone/images/storageaccountipasn.png?w=1024)
+
+Now let's look at the IP the VM is using:
+![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-azure-backbone/images/vmipasn.png?w=1024)
+
+And wouldn't you know that IP address is also in AS8075.  So we can see that the traffic is staying on the Microsoft network.  This is because the VM is using the default internet access for virtual machines and the storage account is not using Private Link/Endpoint.
 
 
 
