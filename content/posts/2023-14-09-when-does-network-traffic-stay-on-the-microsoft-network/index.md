@@ -41,25 +41,39 @@ The above is sometimes interpreted as saying that using Private Link/Private End
 #### Let's look at some examples
 ## Example 1:
 
-- Here we have a virtual machine in UK South and a storage account in East US.  Everything is in the same subscription and the same resource group.  The virtual machine is in a VNET with a private IP address of 10.10.10.10 and it does not have a public IP associated to it.  It is using the Azure default outbound access<sup>4</sup>
+- In this example we have a virtual machine in UK South and a storage accounts in UK South East US.  Everything is in the same subscription and the same resource group.  The virtual machine is in a VNET with a private IP address of 10.10.10.10 and it does not have a public IP associated to it.  It is using the Azure default outbound access<sup>4</sup>
 - The storage account is using the default settings and is not using Private Link/Endpoint
 
-The VM does not have a public IP atatched to it and uses the default internet access for virtual machines:
-![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-azure-backbone/images/vmip.png?w=1024)
+Resources deployed:
+![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/resources.png?w=1024)
 
-The storage account is called labwsxspfde and the blob endpoint is https://labwsxspfde.blob.core.windows.net/
+The VM does not have a public IP attached to it and uses the default internet access for virtual machines:
+![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/vmip.png?w=1024)
+
+The UK South storage account is called labquqcdg4e and the blob endpoint is https://labquqcdg4e.blob.core.windows.net/
 And if we do an nslookup on the storage account endpoint we get the following:
-![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-azure-backbone/images/storageaccountip.png?w=1024)
+![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/ukstorageaccountip.png?w=1024)
 
-So we can see that the storage account is using a public IP address of 52.239.169.132 and our VM is using default VM internet access and has a public IP address of 20.254.44.28
+The East US storage account is called labqw68xesk and the blob endpoint is https://labqw68xesk.blob.core.windows.net/
+And if we do an nslookup on the storage account endpoint we get the following:
+![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/eusstorageaccountip.png?w=1024)
 
-If we now use ipinfo.io to see what ANS that IP address belongs to we get the following:
-![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-azure-backbone/images/storageaccountipasn.png?w=1024)
 
-Now let's look at the IP the VM is using:
-![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-azure-backbone/images/vmipasn.png?w=1024)
+So, we have a virtual machine using default VM internet access and storage accounts in UK South and East US using default settings.  
+- The VM is being identified on the internet as using IP address 51.132.235.13
+- The storage account labquqcdg4e (UK South) is being resolved to IP address 20.150.40.4
+- The storage account labqw68xesk (East US) is being resolved to IP address 52.239.171.228
 
-And wouldn't you know that IP address is also in AS8075.  So we can see that the traffic is staying on the Microsoft network.  This is because the VM is using the default internet access for virtual machines and the storage account is not using Private Link/Endpoint.
+
+If we now use ipinfo.io to see what AS and what company those IP address belong to we get the following:
+
+![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/vmipasn.png?w=1024)
+
+![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/storageaccountuksipasn.png?w=1024)
+
+![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/storageaccounteusipasn.png?w=1024)
+
+All the IP address are in AS8075 and all belong to Microsoft.  So we can see that the traffic is staying on the Microsoft network.  
 
 
 
