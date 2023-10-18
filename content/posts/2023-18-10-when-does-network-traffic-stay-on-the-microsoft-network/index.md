@@ -45,18 +45,18 @@ The above seem pretty comprehensive and clear, but let's do some investigation t
 - The storage account is using the default settings and is not using Private Link/Endpoint
 
 Resources deployed:
-![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/resources.png?w=1024)
+![](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/resources.png?w=1024)
 
 The VM does not have a public IP attached to it and uses the default internet access for virtual machines:
-![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/vmip.png?w=1024)
+![](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/vmip.png?w=1024)
 
 The UK South storage account is called labquqcdg4e and the blob endpoint is https://labquqcdg4e.blob.core.windows.net/
 And if we do an nslookup on the storage account endpoint we get the following:
-![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/ukstorageaccountip.png?w=1024)
+![](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/ukstorageaccountip.png?w=1024)
 
 The East US storage account is called labqw68xesk and the blob endpoint is https://labqw68xesk.blob.core.windows.net/
 And if we do an nslookup on the storage account endpoint we get the following:
-![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/eusstorageaccountip.png?w=1024)
+![](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/eusstorageaccountip.png?w=1024)
 
 
 So, we have a virtual machine using default VM internet access and storage accounts in UK South and East US using default settings.  
@@ -67,19 +67,19 @@ So, we have a virtual machine using default VM internet access and storage accou
 
 If we now use ipinfo.io to see what AS and what company those IP address belong to we get the following:
 
-![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/vmipasn.png?w=1024)
+![](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/vmipasn.png?w=1024)
 
-![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/storageaccountuksipasn.png?w=1024)
+![](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/storageaccountuksipasn.png?w=1024)
 
-![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/storageaccounteusipasn.png?w=1024)
+![](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/storageaccounteusipasn.png?w=1024)
 
 So, we can see that the VM is being identified as being in AS8075 (Microsoft) and the storage accounts are being identified as being in AS8075 (Microsoft).  So, the traffic will be routed on the Microsoft Network, it will stay on the Microsoft network and not, any any point, traverse the public internet.
 
 What if I add a public IP to the VM and use that to access the storage accounts?  Will the traffic still stay on the Microsoft network?
-![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/vmpublicip.png?w=1024)
+![](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/vmpublicip.png?w=1024)
 
 I've added a public IP address to my VM, that IP address is 20.50.112.127.  Let's look that IP address up on ipinfo.io and see what AS it belongs to:
-![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/vmpublicipasn.png?w=1024)
+![](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/vmpublicipasn.png?w=1024)
 
 Once again the IP address is being identified as being in AS8075 (Microsoft).
 
@@ -87,16 +87,16 @@ Once again the IP address is being identified as being in AS8075 (Microsoft).
 
 #### Example 2 - Azure to Microsoft 365 services
 What about the mention earlier about Microsoft 365?  If I'm on an Azure VM do I still stay on the Microsoft network if I access those services?  Let's find out.
-![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/nslookupoutlook_office_com.png?w=1024)
+![](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/nslookupoutlook_office_com.png?w=1024)
 We can see that outlook.office.com is being resolved to:
 - 40.99.150.162
-![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/outlook_office1.png?w=1024)
+![](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/outlook_office1.png?w=1024)
 - 52.97.208.18
-![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/outlook_office2.png?w=1024)
+![](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/outlook_office2.png?w=1024)
 - 40.99.151.146
-![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/outlook_office3.png?w=1024)
+![](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/outlook_office3.png?w=1024)
 - 52.97.133.146
-![](/content/posts/2023-14-09-when-does-network-traffic-stay-on-the-microsoft-network/images/outlook_office4.png?w=1024)
+![](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/outlook_office4.png?w=1024)
 
 If we look up those IP addresses on ipinfo.io we can see that they are all in AS8075 (Microsoft)
 
