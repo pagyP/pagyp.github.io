@@ -29,6 +29,6 @@ url = "https://infosec.exchange/@paul_paginton"
 rel = "me"
 
 
-
+canonifyURLs = true
 
 
