@@ -1,5 +1,5 @@
 ---
-title: "When does network traffic stay on the Azure backbone network? "
+title: "When does network traffic stay on the Microsoft network? "
 date: "2023-10-18"
 featured_image: ""
 author: "Paul Paginton"
