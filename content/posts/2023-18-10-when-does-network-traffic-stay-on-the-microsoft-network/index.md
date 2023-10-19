@@ -1,6 +1,6 @@
 ---
 title: "When does network traffic stay on the Azure backbone network? "
-date: "2023-09-14"
+date: "2023-10-18"
 featured_image: ""
 author: "Paul Paginton"
 categories: 
