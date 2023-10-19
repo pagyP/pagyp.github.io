@@ -32,3 +32,7 @@ rel = "me"
 canonifyURLs = true
 
 
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = false
+      xhtml = false
