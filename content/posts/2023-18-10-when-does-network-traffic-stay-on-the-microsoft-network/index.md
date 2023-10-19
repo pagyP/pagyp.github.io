@@ -12,6 +12,7 @@ tags:
   - "azure"
   - "networking"
   - "microsoft"
+  - "microsoft network"
 ---
 
 ### Question:
