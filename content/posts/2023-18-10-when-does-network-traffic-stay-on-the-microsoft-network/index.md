@@ -51,7 +51,7 @@ Resources deployed:
 ![A picture showing the Azure resources being used.  Includes Virtual Machine and two storage accounts, one in UK South and one in East US](https://github.com/pagyP/pagyp.github.io/blob/main/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/resources.png?w=1024)
 
 The VM does not have a public IP attached to it and uses the default internet access for virtual machines:
-![A picture of the IP address the machine is using to connec to to the internet, using default VM outboudn access](./content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/vmip.png?w=1024)
+![A picture of the IP address the machine is using to connect to to the internet, using default VM outbound access](/images/vmip.png?w=1024)
 
 The UK South storage account is called labquqcdg4e and the blob endpoint is https://labquqcdg4e.blob.core.windows.net/
 And if we do an nslookup on the storage account endpoint we get the following:
