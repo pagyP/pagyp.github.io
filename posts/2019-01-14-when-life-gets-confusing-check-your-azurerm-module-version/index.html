@@ -6,7 +6,7 @@ $KeyVault = Get-AzureRmKeyVault -VaultName $KeyVaultName -ResourceGroupName $rgn
 $diskEncryptionKeyVaultUrl = $KeyVault.VaultUri;
 $KeyVaultResourceId = $KeyVault.ResourceId;
 Set-AzureRmVMDiskEncryptionExtension -ResourceGroupName $rgname -VMName $vmName -DiskEncryptionKeyVaultUrl $diskEncryptionKeyVaultUrl -DiskEncryptionKeyVaultId $KeyVaultResourceId;
-Now when I ran Set-AzureRMVMDiskEncryptionExtension it kept prompting me for an AADClient."><meta name=generator content="Hugo 0.115.4"><meta name=robots content="noindex, nofollow"><link rel=stylesheet href=/ananke/css/main.min.css><meta property="og:title" content="When life gets confusing - check your AzureRM module version"><meta property="og:description" content="I had to enable disk encryption on some existing Azure VMs this morning but I kept hitting a snag even though I had done this before and was using the same powershell as before. Here&rsquo;s the PowerShell:
+Now when I ran Set-AzureRMVMDiskEncryptionExtension it kept prompting me for an AADClient."><meta name=generator content="Hugo 0.119.0"><meta name=robots content="noindex, nofollow"><link rel=stylesheet href=/ananke/css/main.min.css><meta property="og:title" content="When life gets confusing - check your AzureRM module version"><meta property="og:description" content="I had to enable disk encryption on some existing Azure VMs this morning but I kept hitting a snag even though I had done this before and was using the same powershell as before. Here&rsquo;s the PowerShell:
 $rgName = &lsquo;MySecureRg&rsquo;;
 $vmName = &lsquo;MySecureVM&rsquo;;
 $KeyVaultName = &lsquo;MySecureVault&rsquo;;
