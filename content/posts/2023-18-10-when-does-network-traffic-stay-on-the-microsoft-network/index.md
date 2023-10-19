@@ -90,7 +90,7 @@ Once again the IP address is being identified as being in AS8075 (Microsoft).
 
 #### Example 2 - Azure to Microsoft 365 services
 What about the mention earlier about Microsoft 365?  If I'm on an Azure VM do I still stay on the Microsoft network if I access those services?  Let's find out.
-![A picture that shows the IP addresses that outlook.office.com resolves to from our virtual machine in Azure](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/nslookupoutlook_office_com.png?w=1024)
+![](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/nslookupoutlook_office_com.png?w=1024)
 We can see that outlook.office.com is being resolved to:
 - 40.99.150.162
 ![A picture that shows IP address 40.99.150.162 is part of As8075 and is owned by Microsoft](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/outlook_office1.png?w=1024)
