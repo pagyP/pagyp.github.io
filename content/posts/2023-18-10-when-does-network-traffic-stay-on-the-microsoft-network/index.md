@@ -48,7 +48,7 @@ The above seem pretty comprehensive and clear, but let's do some investigation t
 - The storage account is using the default settings and is not using Private Link/Endpoint
 
 Resources deployed:
-![](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/resources.png?w=1024)
+![A diagram listing the Azure resources being used.  Includes Virtual Machine and two storage accounts, one in UK South and one in East US](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/resources.png?w=1024)
 
 The VM does not have a public IP attached to it and uses the default internet access for virtual machines:
 ![](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/vmip.png?w=1024)
