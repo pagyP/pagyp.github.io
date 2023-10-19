@@ -48,7 +48,7 @@ The above seem pretty comprehensive and clear, but let's do some investigation t
 - The storage account is using the default settings and is not using Private Link/Endpoint
 
 Resources deployed:
-![A picture showing the Azure resources being used.  Includes Virtual Machine and two storage accounts, one in UK South and one in East US](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/resources.png?w=1024)
+![A picture showing the Azure resources being used.  Includes Virtual Machine and two storage accounts, one in UK South and one in East US](https://github.com/pagyP/pagyp.github.io/blob/main/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/resources.png?w=1024)
 
 The VM does not have a public IP attached to it and uses the default internet access for virtual machines:
 ![A picture of the IP address the machine is using to connecto to the internet, using default VM outboudn access](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/vmip.png?w=1024)
@@ -90,7 +90,7 @@ Once again the IP address is being identified as being in AS8075 (Microsoft).
 
 #### Example 2 - Azure to Microsoft 365 services
 What about the mention earlier about Microsoft 365?  If I'm on an Azure VM do I still stay on the Microsoft network if I access those services?  Let's find out.
-![](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/nslookupoutlook_office_com.png?w=1024)
+![A picture that shows the IP addresses that outlook.office.com resolves to from our virtual machine in Azure](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/nslookupoutlook_office_com.png?w=1024)
 We can see that outlook.office.com is being resolved to:
 - 40.99.150.162
 ![A picture that shows IP address 40.99.150.162 is part of As8075 and is owned by Microsoft](/content/posts/2023-18-10-when-does-network-traffic-stay-on-the-microsoft-network/images/outlook_office1.png?w=1024)
