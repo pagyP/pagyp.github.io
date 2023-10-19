@@ -8,6 +8,7 @@ SectionPagesMenu = "main"
 [params]
   author = "Paul Paginton"
   show_reading_time = true
+  Description = "A blog about cloud, with a bias toward Azure, cloud networking, security and Infrastructure as Code and other things that interest me"
   
   
   
