@@ -23,6 +23,8 @@ For a video discussion of the same topic see https://www.youtube.com/watch?v=ssr
 ### Background:
 There seems to be some confusion as to when, and when not, traffic originating in Azure stays within the Azure backbone (from now on I'll refer to this as the Microsoft Network) network.  This is an important question and understanding this correctly is equally important.  I see many blogs/posts/articles that all seem to suggest that there are times when traffic originating from within Azure and destined for other Microsoft services will transit via the public internet and not stay on the Microsoft network. It's also a common form of mis-understanding in many conversations I have with customers. 
 
+Pre-reading: If you are not familiar with Autonomous Systems (AS), have a read of https://www.cloudflare.com/en-gb/learning/network-layer/what-is-an-autonomous-system/
+
 
 ### The Microsoft Network:
 The Microsoft network is ASN 8075<sup>1</sup> and as such Microsoft owned IP addresses are routed within AS8075
@@ -128,3 +130,5 @@ Would Microsoft route traffic out of their network, onto the public internet and
 https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/connectivity-to-azure-paas-services
 
 https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/routing-preference-overview
+
+https://www.cloudflare.com/en-gb/learning/network-layer/what-is-an-autonomous-system/
