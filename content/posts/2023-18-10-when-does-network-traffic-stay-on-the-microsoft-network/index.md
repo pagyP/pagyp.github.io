@@ -102,7 +102,7 @@ If we look up those IP addresses on ipinfo.io we can see that they are all in AS
 
 If you have a VDI deployment hosted in Azure and users on that VDI service accessing services from Microsoft 365, such as Outlook, then that traffic will stay on the Microsoft network.
 
-Would Microsoft out of their network, onto the public internet and back into the Microsoft network again?  No is the short answer to that question, that would be inefficient, would add latency and would be a security risk.
+Would Microsoft route traffic out of their network, onto the public internet and back into the Microsoft network again?  No is the short answer to that question, that would be inefficient, would add latency and would be a security risk.
 
 #### Conclusion
 - Azure to Azure traffic stays on the Microsoft network
