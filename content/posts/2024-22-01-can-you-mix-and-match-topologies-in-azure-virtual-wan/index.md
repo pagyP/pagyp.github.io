@@ -1,6 +1,6 @@
 ---
 title: "Can Yoo Mix and Match Topologies in Azure Virtual WAN?"
-date: "202-01-22"
+date: "2024-01-22"
 featured_image: ""
 author: "Paul Paginton"
 categories: 
@@ -34,7 +34,7 @@ A colleague asked me an interesting question about an Azure Virtual WAN scenario
 #### Current Topology:
 The current topology is shown below.  The customer has a single virtual WAN hub in West Europe and a number of virtual networks in West Europe.  The customer is using a tiered vnet model in West Europe (https://docs.microsoft.com/en-us/azure/virtual-wan/virtual-wan-about#topologies) to connect the virtual networks to an 'NVA vnet' which in turn is linked to the West Europe virtual WAN hub.  The customer is using Palo Alto Firewalls in the West Europe 'NVA vnet'
 
-(./images/vwan-01.png?w=1024)
+![A picture showing the existing Azure Virtual WAN topology, a virtual wan with a single hub in West Europe](./images/vwan-01.png?w=1024)
 
 #### Proposed Topology:
 The proposed topology is shown below.  The customer wants to deploy a new virtual WAN hub in UK South and place an Azure Firewall in the UK South virtual WAN hub.  The customer wants to use the new Azure Virtual WAN routing intent to route private traffic to UK South hosted spoke virtual networks and to the West Europe tiered virtual networks and internet egress via the Azure Firewall in the UK South virtual WAN Hub.  The customer wants to leave the West Europe virtual WAN hub and virtual networks as is, with no routing intent configured.
