@@ -32,21 +32,20 @@ A colleague asked me an interesting question about an Azure Virtual WAN scenario
 ### Topology:
 
 #### Current Topology:
-The current topology is shown below.  The customer has a single virtual WAN hub in West Europe and a number of virtual networks in West Europe.  The customer is using a tiered vnet model in West Europe (https://docs.microsoft.com/en-us/azure/virtual-wan/virtual-wan-about#topologies) to connect the virtual networks to an 'NVA vnet' which in turn is linked to the West Europe virtual WAN hub.  The customer is using Palo Alto Firewalls in the West Europe 'NVA vnet'
+TThe existing topology, as depicted below, consists of a single virtual WAN hub in West Europe and several virtual networks in the same region. The customer is employing a tiered vnet model in West Europe to connect the virtual networks to an ‘NVA vnet’, which is subsequently linked to the West Europe virtual WAN hub. The customer has implemented Palo Alto Firewalls in the West Europe ‘NVA vnet’.
 
 ![A picture showing the existing Azure Virtual WAN topology, a virtual wan with a single hub in West Europe](./images/vwan-01.png?w=1024)
 
 #### Proposed Topology:
-The proposed topology is shown below.  The customer wants to deploy a new virtual WAN hub in UK South and place an Azure Firewall in the UK South virtual WAN hub.  The customer wants to use the new Azure Virtual WAN routing intent to route private traffic to UK South hosted spoke virtual networks and to the West Europe tiered virtual networks and internet egress via the Azure Firewall in the UK South virtual WAN Hub.  The customer wants to leave the West Europe virtual WAN hub and virtual networks as is, with no routing intent configured.
+The proposed topology, illustrated below, involves the deployment of a new virtual WAN hub in UK South and the integration of an Azure Firewall into the UK South virtual WAN hub. The customer intends to use the new Azure Virtual WAN routing intent to route private traffic to UK South hosted spoke virtual networks and to the West Europe tiered virtual networks, with internet egress via the Azure Firewall in the UK South virtual WAN Hub. The customer plans to retain the existing configuration of the West Europe virtual WAN hub and virtual networks, without configuring routing intent.
 
 ![A picture showing the desired Azure Virtual WAN topology, a virtual wan with a hub in West Europe using the tiered vnet design without routing intent and a Hub in UK South using routing intent](./images/vwan-02.png?w=1024)
 
 
-### Investigation:
+### ISummary:
 #### Short Version:
 
-- The customer can use the new Azure Virtual WAN routing intent in the UK South virtual WAN hub and continue to use the tiered vnet model in the West Europe region and traffic will route correctly across regions, i.e. vnet to vnet traffic across regions will route via the Palo Alto firewalls in the NVA vnet in West Europe and via the Azure Firewall in the UK South virtual WAN hub (dependant upon the necessary firewall rules allowing the traffic).  The customer can mix and match topologies in Azure Virtual WAN.
-- The above is achieved using the BGP Peering feature in Azure Virtual WAN https://learn.microsoft.com/en-us/azure/virtual-wan/scenario-bgp-peering-hub. The BGP peering feature allows the customer to use the new Azure Virtual WAN routing intent in the UK South virtual WAN hub and continue to use the tiered vnet model in the West Europe region.  The BGP peering feature allows the customer to mix and match topologies in Azure Virtual WAN.
+The customer can indeed utilize the new Azure Virtual WAN routing intent in the UK South virtual WAN hub while continuing to use the tiered vnet model in the West Europe region. Traffic will be correctly routed across regions, i.e., vnet to vnet traffic across regions will be directed via the Palo Alto firewalls in the NVA vnet in West Europe and via the Azure Firewall in the UK South virtual WAN hub (dependent upon the necessary firewall rules permitting the traffic). The customer can mix and match topologies in Azure Virtual WAN. This is facilitated by the BGP Peering feature in Azure Virtual WAN, which allows the customer to use the new Azure Virtual WAN routing intent in the UK South virtual WAN hub and continue to use the tiered vnet model in the West Europe region. The BGP peering feature enables the customer to mix and match topologies in Azure Virtual WAN.
   
 
 #### Final Toplogy:
