@@ -1,5 +1,5 @@
 ---
-title: "Can Yoo Mix and Match Topologies in Azure Virtual WAN?"
+title: "Can You Mix and Match Topologies in Azure Virtual WAN?"
 date: "2024-01-22"
 featured_image: ""
 author: "Paul Paginton"
@@ -39,7 +39,7 @@ The current topology is shown below.  The customer has a single virtual WAN hub 
 #### Proposed Topology:
 The proposed topology is shown below.  The customer wants to deploy a new virtual WAN hub in UK South and place an Azure Firewall in the UK South virtual WAN hub.  The customer wants to use the new Azure Virtual WAN routing intent to route private traffic to UK South hosted spoke virtual networks and to the West Europe tiered virtual networks and internet egress via the Azure Firewall in the UK South virtual WAN Hub.  The customer wants to leave the West Europe virtual WAN hub and virtual networks as is, with no routing intent configured.
 
-(./images/vwan-02.png?w=1024)
+![A picture showing the desired Azure Virtual WAN topology, a virtual wan with a hub in West Europe using the tiered vnet design without routing intent and a Hub in UK South using routing intent](./images/vwan-02.png?w=1024)
 
 
 ### Investigation:
@@ -51,7 +51,7 @@ The proposed topology is shown below.  The customer wants to deploy a new virtua
 
 #### Final Toplogy:
   
-(./images/vwan-03.png?w=1024)
+![A picture showing the final Azure Virtual WAN topology](./images/vwan-03.png?w=1024)
 
 - To re-create this I used an OpnSense firewall (customer is using Palo Alto) in West Europe and an Azure Firewall in UK South.  Notice the BGP peering between the NVA and the Virtual WAN Hub in West Europe.  
 
