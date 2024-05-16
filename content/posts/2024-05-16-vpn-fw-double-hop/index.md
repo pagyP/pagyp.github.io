@@ -24,7 +24,7 @@ A customer asked if it was possible to use what they called a 'bridge-hub' virtu
 #### Current Topology:
 The existing topology looked like:
 
-![A picture showing the existing Azure virtual network topology, shows a hub vnet with a VPN gateway and firewall and a 'bridge-hub' virtual which as spoke virtual network peered to it](.content/posts/2024-05-16-vpn-fw-double-hop/images/s2s-double-fw-hop-init.drawio.png?w=1024)
+![A picture showing the existing Azure virtual network topology, shows a hub vnet with a VPN gateway and firewall and a 'bridge-hub' virtual which as spoke virtual network peered to it](./images/s2s-double-fw-hop-init.drawio.png?w=1024)
 
 ##### First thoughts on this:
 Let's address the question of why the customer wanted to do this:
@@ -42,7 +42,7 @@ Let's address the question of why the customer wanted to do this:
 ### Summary:
 This can be made to work with appropiate route tables in Azure (static routes) and the correct routing configuration on the on-prem router/firewall.  
 
-![A picture showing the existing Azure virtual network topology, shows a hub vnet with a VPN gateway and firewall and a 'bridge-hub' virtual which as spoke virtual network peered to it. Same as the previous picture, but this time includes details on the route table configuration needed to make this work](./images/s2s-double-fw-hop-drawio.png?w=1024)
+![A picture showing the existing Azure virtual network topology, shows a hub vnet with a VPN gateway and firewall and a 'bridge-hub' virtual which as spoke virtual network peered to it. Same as the previous picture, but this time includes details on the route table configuration needed to make this work](./images/s2s-double-fw-hop.drawio.png?w=1024)
 
 ### Conclusion:
 
