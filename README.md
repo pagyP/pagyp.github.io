@@ -1,0 +1,1 @@
+[![pages-build-deployment](https://github.com/pagyP/pagyp.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/pagyP/pagyp.github.io/actions/workflows/pages/pages-build-deployment)
