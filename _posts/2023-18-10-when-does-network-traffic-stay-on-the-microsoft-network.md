@@ -55,11 +55,11 @@ The VM does not have a public IP attached to it and uses the default internet ac
 
 The UK South storage account is called labquqcdg4e and the blob endpoint is https://labquqcdg4e.blob.core.windows.net/
 And if we do an nslookup on the storage account endpoint we get the following:
-![A picture showing the IP address that the UK South storage account resolves to](./images/ukstorageaccountip.png?w=1024)
+![A picture showing the IP address that the UK South storage account resolves to](/assets/images/ukstorageaccountip.png?w=1024)
 
 The East US storage account is called labqw68xesk and the blob endpoint is https://labqw68xesk.blob.core.windows.net/
 And if we do an nslookup on the storage account endpoint we get the following:
-![A picture showing the IP address that the East US storage account resolves to](./images/eusstorageaccountip.png?w=1024)
+![A picture showing the IP address that the East US storage account resolves to](/assets/images/eusstorageaccountip.png?w=1024)
 
 
 So, we have a virtual machine using default VM internet access and storage accounts in UK South and East US using default settings.  
