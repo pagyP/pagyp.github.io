@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+<!-- This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
 
 You can find the source code for Minima at GitHub:
 [jekyll][jekyll-organization] /
@@ -15,4 +15,10 @@ You can find the source code for Jekyll at GitHub:
 [jekyll](https://github.com/jekyll/jekyll)
 
 
-[jekyll-organization]: https://github.com/jekyll
+[jekyll-organization]: https://github.com/jekyll -->
+
+This site is run by Paul Paginton, a cloud solution architect based in the UK.  I have been working in the IT industry for over 20 years and have a passion for technology.  I have worked with a number of different technologies over the years and have a keen interest in cloud computing, security,  automation, devops and a special interest in cloud networking.  I primarily work with Microsoft Azure, but have some experience with AWS and GCP.
+
+![Github logo](/assets/images/github-mark-white.png)<https://github.com/pagyp>
+
+![Mastodon logo](/assets/images/logo-purple.svg)  <https://infosec.exchange/@paul_paginton>
