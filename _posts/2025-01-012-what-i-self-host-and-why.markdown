@@ -16,7 +16,10 @@ Couple of notes:
 
 Before diving into the services/application I use I'll give an overview of my home network setup:
 
-
+| VLAN No. | VLAN Purpose| VLAN CIDR |
+|----------|----------|----------|
+| Row 1 Col 1 | Row 1 Col 2 | Row 1 Col 3 |
+| Row 2 Col 1 | Row 2 Col 2 | Row 2 Col 3 |
 
 ...
 Before diving into the services/application I use I'll give an overview of my home network setup:
