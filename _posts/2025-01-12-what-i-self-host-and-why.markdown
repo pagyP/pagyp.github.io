@@ -54,7 +54,9 @@ I currently use a Zyxel AWX90 access point for 2.4Ghz and 5Ghz wifi.  Each SSID 
 - ACME package runs on Pfsense to manage Lets Encrypt certificates for services running on the Proxmox cluster
 
 ...
-Before diving into the services/application I use I'll give an overview of my home network setup:
+
+#### Services
+
 
 | Service       | Description               | Reason                             |
 |:--------------|:--------------------------|-----------------------------------:|
