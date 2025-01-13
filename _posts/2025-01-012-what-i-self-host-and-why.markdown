@@ -40,6 +40,7 @@ Perhaps somewhat obviously I don't need /24 subnets for each of these vlans but 
   - Each of the Optiplex 7010's has 32GB RAM and a 240GB SSD
 - Asustor NAS device with 2 x 2TB drives in RAID 1.  All 2 TB are presented to the Proxmox cluster as SMB storage.  
 - A Dell Poweredge T20 with 32GB RAM and 2 x 1TB in RAID0 runs Proxmox Backup Server and backs up all VMs and LXC containers to the local drives in this server.
+- A MinisForum U850 Mini PC running Pop OS with 32GB RAM and a 512GB SSD.  
 
 
 #### Wifi
@@ -75,11 +76,22 @@ Before diving into the services/application I use I'll give an overview of my ho
 
 - FreshRSS runs on a LXC container on the Proxmox cluster
 
-- Calibre runs on a Mini PC running Pop OS
+- Calibre runs on the MinisForum Mini PC
 
 - Cisco Modelling Labs runs in a VM on the Proxmox cluster
 
-- Jellyfin runs on the same mini PC as Calibre
+- Jellyfin runs on the MinisForum Mini PC
+
+##### Service Presentation
+
+- Jellyfin is presented to the network via HAproxy on Pfsense
+- Nextcloud is presented to the network via HAproxy on Pfsense
+- FreshRSS is presented to the network via HAproxy on Pfsense
+- Calibre is presented to the network via HAproxy on Pfsense
+- Cisco Modelling Labs is presented to the network via HAproxy on Pfsense
+
+What the above means is I can access these services by a domain name I own and have valid certificates for them via Lets Encrypt.
+I don't publicly expose any of these services to the internet.  I use a VPN to access them when I'm not at home.
 
 #### Why?
 
@@ -95,3 +107,5 @@ Some things I'm considering on adding to my self hosted services in the future:
 - Wazuh for host based intrusion detection
 - Ansible for configuration management
 - Replace the current 8 port switch with something more capable.  Probably something with 2.5 GB ports and more than 8 ports
+
+Hopefully I'll find the time to write up more on the software, services and hardware I use in the future.
