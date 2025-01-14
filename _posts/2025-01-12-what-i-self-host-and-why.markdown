@@ -111,3 +111,13 @@ Some things I'm considering on adding to my self hosted services in the future:
 - Replace the current 8 port switch with something more capable.  Probably something with 2.5 GB ports and more than 8 ports
 
 Hopefully I'll find the time to write up more on the software, services and hardware I use in the future.
+
+##### Does this help with my professional work life?
+
+- Yes, I've been able to expand my knowledge about networking, virtualisation, Linux and Docker by self hosting services at home.  This has helped me in my professional life as I've been able to apply some of the knowledge I've gained to my work.
+- I also run site to site VPNs to Azure (I mostly work with Azure) and have been able to test out different VPN configurations, for example
+  - Policy based VPNs
+  - Route based VPNs
+  - Dynamic routing with BGP
+  - Static routing
+- From an Azure perspective this allows me to test things like private endpoints and how DNS resolution works in Azure when using private endpoints. And gives me a better understanding of how traffic flows within Azure and between Azure and on-premises.
