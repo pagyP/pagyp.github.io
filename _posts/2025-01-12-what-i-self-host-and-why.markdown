@@ -45,7 +45,7 @@ Perhaps somewhat obviously I don't need /24 subnets for each of these vlans but 
 
 #### Wifi
 
-I currently use a Zyxel AWX90 access point for 2.4Ghz and 5Ghz wifi.  Each SSID has client isolation enabled.
+I currently use a Zyxel NWA90AX access point for 2.4Ghz and 5Ghz wifi.  Each SSID has client isolation enabled.
 
 ##### Firewall notes
 
