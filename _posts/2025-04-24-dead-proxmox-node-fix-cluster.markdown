@@ -45,3 +45,5 @@ To fix this up I needed to run the following command on one of the other nodes i
 - That removed the node from the cluster and pvecm status then reports the correct number of votes (2)
 - Then to remove the dead node from the web gui remove from /etc/pve/nodes/nodename - just remove the whole directory
 
+References:
+- https://forum.proxmox.com/threads/node-failure.165179/#post-765580 
