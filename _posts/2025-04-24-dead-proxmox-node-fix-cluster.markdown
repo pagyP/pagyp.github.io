@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Proxmox node failure, how to fix a Proxmox cluster"
-date:   2025-04-25 15:30:24 +0000
+date:   2025-04-24 15:30:24 +0000
 categories: selfhosting
 ---
 
